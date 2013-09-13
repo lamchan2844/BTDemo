@@ -198,6 +198,8 @@ public class BTClient extends Activity {
 					}
 					while (true) {
 						num = is.read(buffer); // 读入数据
+//debug*******************************************************
+						System.out.println(num);
 						n = 0;
 
 						String s0 = new String(buffer, 0, num);
@@ -212,6 +214,22 @@ public class BTClient extends Activity {
 							n++;
 						}
 						String s = new String(buffer_new, 0, n);
+//debug***************************************************
+						System.out.println(s);
+						if(s.equals("O"))
+						{
+							s="OK";
+						}
+						else if(s.equals("N"))
+						{
+							s="NO";
+						}
+						else
+						{
+							s="";
+						}
+
+						System.out.println(s);
 						smsg += s; // 写入接收缓存
 						if (is.available() == 0)
 							break; // 短时间没有数据才跳出进行显示
@@ -228,13 +246,6 @@ public class BTClient extends Activity {
 	Handler handler = new Handler() {
 		public void handleMessage(Message msg) {
 			super.handleMessage(msg);
-			if (smsg == "AT") {
-				smsg = "";
-			} else if (smsg == "O") {
-				smsg = "OK";
-				Toast.makeText(getApplicationContext(), "OK", Toast.LENGTH_LONG)
-						.show();
-			}
 			dis.setText(smsg); // 显示数据
 			sv.scrollTo(0, dis.getMeasuredHeight()); // 跳至数据最后一页
 		}
@@ -300,15 +311,52 @@ public class BTClient extends Activity {
 
 	// 保存按键响应函数
 	public void onSaveButtonClicked(View v) {
-		Toast.makeText(this, "谁是世界上最帅的人", Toast.LENGTH_LONG).show();
+		try {
+			OutputStream os = _socket.getOutputStream(); // 蓝牙连接输出流
+			byte[] A = "S".toString().getBytes();
+			os.write(A);
+		} catch (IOException e) {
+			Toast.makeText(getApplicationContext(), "没有连接设备", Toast.LENGTH_LONG).show();
+		}
+	}
+	
+	public void onAButtonClicked(View v) {
 		try {
 			OutputStream os = _socket.getOutputStream(); // 蓝牙连接输出流
 			byte[] A = "A".toString().getBytes();
 			os.write(A);
 		} catch (IOException e) {
+			Toast.makeText(getApplicationContext(), "没有连接设备", Toast.LENGTH_LONG).show();
 		}
 	}
-
+	
+	public void onBButtonClicked(View v) {
+		try {
+			OutputStream os = _socket.getOutputStream(); // 蓝牙连接输出流
+			byte[] A = "B".toString().getBytes();
+			os.write(A);
+		} catch (IOException e) {
+			Toast.makeText(getApplicationContext(), "没有连接设备", Toast.LENGTH_LONG).show();
+		}
+	}
+	public void onCButtonClicked(View v) {
+		try {
+			OutputStream os = _socket.getOutputStream(); // 蓝牙连接输出流
+			byte[] A = "C".toString().getBytes();
+			os.write(A);
+		} catch (IOException e) {
+			Toast.makeText(getApplicationContext(), "没有连接设备", Toast.LENGTH_LONG).show();
+		}
+	}
+	public void onDButtonClicked(View v) {
+		try {
+			OutputStream os = _socket.getOutputStream(); // 蓝牙连接输出流
+			byte[] A = "D".toString().getBytes();
+			os.write(A);
+		} catch (IOException e) {
+			Toast.makeText(getApplicationContext(), "没有连接设备", Toast.LENGTH_LONG).show();
+		}
+	}
 	// 清除按键响应函数
 	public void onClearButtonClicked(View v) {
 		smsg = "";

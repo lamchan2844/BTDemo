@@ -4,5 +4,7 @@
     <string name="app_name">BTDemo</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
+    <string name="A">O</string>
+    <string name="AT">AT</string>
 
 </resources>

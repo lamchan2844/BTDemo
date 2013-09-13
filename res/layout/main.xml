@@ -1,84 +1,128 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    >
-    <TextView android:id="@+id/Text0"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/Text0"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="HC"
-    />
+        android:text="Receive" />
+
     <ScrollView
-		android:id="@+id/ScrollView01"
-		android:layout_height="wrap_content"
-		android:layout_width="fill_parent"
-		android:scrollbars="vertical"
-		android:layout_weight="1"
-		>
-	<TextView android:id="@+id/in"
+        android:id="@+id/ScrollView01"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-    />
+        android:layout_weight="1"
+        android:scrollbars="vertical" >
+
+        <TextView
+            android:id="@+id/in"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" />
     </ScrollView>
+
     <LinearLayout
-        android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        >
-		<EditText  
-			android:id="@+id/Edit0" 
-			android:layout_width="wrap_content" 
-			android:layout_height="wrap_content"
-			android:layout_weight="1"
-			android:layout_gravity="bottom">
-		</EditText>
-		<Button 
-			android:text="send" 
-			android:id="@+id/Button02" 
-			android:layout_width="wrap_content" 
-			android:layout_height="wrap_content"
-			android:onClick="onSendButtonClicked">
-		</Button>
+        android:orientation="horizontal" >
+
+        <EditText
+            android:id="@+id/Edit0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_weight="1" >
+        </EditText>
+
+        <Button
+            android:id="@+id/Button02"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onSendButtonClicked"
+            android:text="send" >
+        </Button>
     </LinearLayout>
+
     <LinearLayout
-        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"       
-        >
-       	<Button 
-			android:text="连接" 
-			android:id="@+id/Button03" 
-			android:layout_width="match_parent" 
-			android:layout_height="wrap_content"
-			android:layout_weight="1"
-			android:onClick="onConnectButtonClicked">
-		</Button>
-		<Button 
-			android:text="保存" 
-			android:id="@+id/Button04" 
-			android:layout_width="match_parent" 
-			android:layout_height="wrap_content"
-			android:layout_weight="1"
-			android:onClick="onSaveButtonClicked"
-			>
-		</Button>
-		<Button 
-			android:text="清空" 
-			android:id="@+id/Button05" 
-			android:layout_width="match_parent" 
-			android:layout_height="wrap_content"
-			android:layout_weight="1"
-			android:onClick="onClearButtonClicked"
-			>
-		</Button>
-		<Button 
-			android:text="退出" 
-			android:id="@+id/Button06" 
-			android:layout_width="match_parent" 
-			android:layout_height="wrap_content"
-			android:layout_weight="1"
-			android:onClick="onQuitButtonClicked">
-		</Button>
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/Button03"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="onConnectButtonClicked"
+            android:text="连接" >
+        </Button>
+
+        <Button
+            android:id="@+id/Button04"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="onSaveButtonClicked"
+            android:text="S" >
+        </Button>
+
+        <Button
+            android:id="@+id/Button05"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="onClearButtonClicked"
+            android:text="清空" >
+        </Button>
+
+        <Button
+            android:id="@+id/Button06"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="onQuitButtonClicked"
+            android:text="退出" >
+        </Button>
     </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/buttonA"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="onAButtonClicked"
+            android:text="A" />
+
+        <Button
+            android:id="@+id/buttonB"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="onBButtonClicked"
+            android:text="B" />
+
+        <Button
+            android:id="@+id/buttonC"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="onCButtonClicked"
+            android:text="C" />
+
+        <Button
+            android:id="@+id/buttonD"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="onDButtonClicked"
+            android:text="D" />
+    </LinearLayout>
+
 </LinearLayout>
